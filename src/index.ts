@@ -1,7 +1,7 @@
 import express from "express";
 
 const app = express();
-const port = 3003;
+const port = 3001;
 
 app.get("/ping", (_request, response) => {
   response.send("pong");
