@@ -7,6 +7,7 @@ const app = express();
 const port = 3001;
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/api/ping", (_request, response) => {
   response.send("pong");
