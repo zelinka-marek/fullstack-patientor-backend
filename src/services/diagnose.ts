@@ -1,6 +1,6 @@
-import { diagnoses } from "../../data/diagnoses";
+import { diagnosis } from "../../data/diagnosis";
 import { type Diagnose } from "../types";
 
-export function getDiagnoses(): Diagnose[] {
-  return diagnoses;
+export function getDiagnosis(): Diagnose[] {
+  return diagnosis;
 }
