@@ -47,5 +47,5 @@ const data = [
 export const patients: Patient[] = data.map((object): Patient => {
   const patient = toNewPatient(object);
 
-  return { ...patient, id: object.id };
+  return { id: object.id, ...patient, entries: [] };
 });

@@ -1,11 +1,24 @@
 import express from "express";
-import { addPatient, getNonSensitivePatients } from "../services/patient";
+import {
+  addPatient,
+  getNonSensitivePatients,
+  getPatientById,
+} from "../services/patient";
 import { toNewPatient } from "../utils";
 
 export const patientRouter = express.Router();
 
 patientRouter.get("/", (_request, response) => {
   response.send(getNonSensitivePatients());
+});
+
+patientRouter.get("/:id", (request, response) => {
+  const { id } = request.params;
+
+  const patient = getPatientById(id);
+  if (!patient) return response.sendStatus(404);
+
+  return response.json(patient);
 });
 
 patientRouter.post("/", (request, response) => {

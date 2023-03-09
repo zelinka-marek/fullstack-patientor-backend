@@ -18,6 +18,11 @@ export function getNonSensitivePatients(): NonSensitivePatient[] {
   );
 }
 
+export function getPatientById(id: string): Patient | undefined {
+  const patient = patients.find((patient) => patient.id === id);
+  return patient;
+}
+
 export function addPatient(newPatient: NewPatient): Patient {
   const patient: Patient = { id: uuid(), ...newPatient };
   patients.push(patient);
