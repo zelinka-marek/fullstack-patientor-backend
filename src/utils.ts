@@ -1,5 +1,4 @@
-import type { NewPatient } from "./types";
-import { Gender } from "./types";
+import { Gender, type NewPatient } from "./types";
 
 function isString(param: unknown): param is string {
   return typeof param === "string" || param instanceof String;
